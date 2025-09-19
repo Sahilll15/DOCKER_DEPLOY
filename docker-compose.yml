@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo:5
+    container_name: blog-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - blog-net
+
+  backend:
+    build: ./backend
+    container_name: blog-backend
+    ports:
+      - "5001:5000"
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/blogdb
+    depends_on:
+      - mongo
+    networks:
+      - blog-net
+
+  frontend:
+    build: ./frontend
+    container_name: blog-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - blog-net
+
+volumes:
+  mongo-data:
+
+networks:
+  blog-net:
+
