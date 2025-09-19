@@ -26,13 +26,6 @@ app.get('/',async(req,res)=>{
   res.send("The server is running by sahil chalke on digital ocean")
 })
 
-app.get("/test",async(req,res)=>{
-  res.send("this is a test route")
-})
-
-app.get("/test2",async(req,res)=>{
-  res.send("this is a test route 2")
-})
 app.get("/getPosts", async (req, res) => {
   const posts = await Post.find();
   res.json(posts);

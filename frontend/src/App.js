@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial" }}>
-      <h1>📖 My Blog</h1>
+      <h1>📖 My Blog new version</h1>
 
       <form onSubmit={handleSubmit} style={{ marginBottom: "20px" }}>
         <input
