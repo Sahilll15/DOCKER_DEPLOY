@@ -25,7 +25,7 @@ const Post = mongoose.model("Post", postSchema);
 app.get('/',()=>{
   res.send("The server is running by sahil chalke")
 })
-app.get("/posts", async (req, res) => {
+app.get("/getPosts", async (req, res) => {
   const posts = await Post.find();
   res.json(posts);
 });
