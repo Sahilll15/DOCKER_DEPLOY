@@ -39,7 +39,7 @@ jobs:
 
       # 6️⃣ Deploy to server via SSH (recommended to use SSH keys)
       - name: Deploy to server
-        uses: appleboy/ssh-action@v0.1.13
+        uses: appleboy/ssh-action@v0.1.9
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
