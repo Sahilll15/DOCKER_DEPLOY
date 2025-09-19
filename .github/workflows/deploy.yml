@@ -52,11 +52,13 @@ jobs:
             # Navigate to your deployment directory
             cd /root/DOCKER_DEPLOY
 
+            docker-compose down
+
             # Pull latest images from Docker Hub
             docker-compose pull
 
             # Recreate containers to use new images
-            docker-compose up -d --force-recreate --remove-orphans
+            docker-compose up -d 
 
             # Optional: clean up unused images
             docker system prune -f
