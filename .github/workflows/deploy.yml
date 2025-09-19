@@ -43,7 +43,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}   # SSH key recommended over password
+          password: ${{ secrets.SSH_PASSWORD }}   # SSH key recommended over password
           port: 22
           script: |
             # Ensure Docker network exists
