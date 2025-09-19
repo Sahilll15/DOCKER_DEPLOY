@@ -42,6 +42,5 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/blog-backend:latest
-            docker pull ${{ secrets.DOCKER_USERNAME }}/blog-frontend:latest
-            docker-compose -f /root/DOCKER_DEPLOY/docker-compose.yml up -d --build
+            # Pull latest images and recreate containers
+            docker-compose -f /root/DOCKER_DEPLOY/docker-compose.yml up -d --pull always --build

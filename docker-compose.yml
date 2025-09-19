@@ -12,7 +12,7 @@ services:
       - blog-net
 
   backend:
-    build: ./backend
+    image: sahilchalke1015/blog-backend:latest
     container_name: blog-backend
     ports:
       - "5001:5000"
@@ -24,7 +24,7 @@ services:
       - blog-net
 
   frontend:
-    build: ./frontend
+    image: sahilchalke1015/blog-frontend:latest
     container_name: blog-frontend
     ports:
       - "3000:80"
@@ -38,4 +38,3 @@ volumes:
 
 networks:
   blog-net:
-
