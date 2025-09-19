@@ -23,7 +23,7 @@ const Post = mongoose.model("Post", postSchema);
 // Routes
 
 app.get('/',()=>{
-  res.send("The server is running by sahil chalke")
+  res.send("The server is running by sahil chalke on digital ocean")
 })
 app.get("/getPosts", async (req, res) => {
   const posts = await Post.find();
