@@ -41,7 +41,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22
-          script: |
-            cd DOCKER_DEPLOY
-            git pull origin 
-            docker-compose -f /root/DOCKER_DEPLOY/docker-compose.yml up -d --pull always --build
+         script: |
+            docker network create blog-net || true
+            docker-compose -f /root/DOCKER_DEPLOY/docker-compose.yml pull
+            docker-compose -f /root/DOCKER_DEPLOY/docker-compose.yml up -d
