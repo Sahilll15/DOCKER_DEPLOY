@@ -42,5 +42,6 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22
           script: |
-            # Pull latest images and recreate containers
+            cd DOCKER_DEPLOY
+            git pull origin 
             docker-compose -f /root/DOCKER_DEPLOY/docker-compose.yml up -d --pull always --build
