@@ -1,4 +1,4 @@
-# Docker Todo Application
+# Docker Application
 
 A full-stack web application built with React, Node.js, Express, and MongoDB, fully containerized using Docker and orchestrated with Docker Compose.
 
